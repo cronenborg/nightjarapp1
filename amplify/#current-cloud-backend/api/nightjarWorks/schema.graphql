@@ -1,0 +1,9 @@
+type Works @model {
+  id: ID!
+  name: String!
+  description: String
+  image: String
+  datestart: String
+  dateend: String
+  url: String
+}

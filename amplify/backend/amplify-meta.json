@@ -1,0 +1,50 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "app1-20181221195641-authRole",
+			"UnauthRoleArn": "arn:aws:iam::084355457226:role/app1-20181221195641-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::084355457226:role/app1-20181221195641-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "app1-20181221195641-deployment",
+			"UnauthRoleName": "app1-20181221195641-unauthRole",
+			"StackName": "app1-20181221195641",
+			"StackId": "arn:aws:cloudformation:us-west-2:084355457226:stack/app1-20181221195641/57b69aa0-04fe-11e9-aba8-0a9edf17d014"
+		}
+	},
+	"api": {
+		"nightjarWorks": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "zk42o6za5nbtdctws23xy5jaf4",
+				"GraphQLAPIEndpointOutput": "https://dh473z3pprduxbcs3qxpeomtpi.appsync-api.us-west-2.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-rlipemzt2jg4pcz3glpsr7yr4q"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/app1-20181221195641-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apinightjarWorks"
+			},
+			"lastPushTimeStamp": "2018-12-21T09:09:16.181Z",
+			"lastPushDirHash": "aFkzu6Kd7FDWTvRoKMIYV9yqowY="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/app1-20181221195641-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2018-12-21T09:09:16.181Z",
+			"output": {
+				"S3BucketSecureURL": "https://nightjarapp1.s3.amazonaws.com",
+				"WebsiteURL": "http://nightjarapp1.s3-website-us-west-2.amazonaws.com",
+				"Region": "us-west-2",
+				"HostingBucketName": "nightjarapp1"
+			},
+			"lastPushDirHash": "NwBFZN4Bvab9J3qgi5xR7WFm0RA="
+		}
+	}
+}

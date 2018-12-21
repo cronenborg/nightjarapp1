@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "nightjarWorks",
+    "schemaGraphql": "s3://app1-20181221195641-deployment/amplify-appsync-files/schema.graphql.1545382875490",
+    "ResolverBucket": "app1-20181221195641-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1545382875490"
+}

@@ -1,0 +1,128 @@
+type Works {
+  id: ID!
+  name: String!
+  description: String
+  image: String
+  datestart: String
+  dateend: String
+  url: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelWorksConnection {
+  items: [Works]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelWorksFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  description: ModelStringFilterInput
+  image: ModelStringFilterInput
+  datestart: ModelStringFilterInput
+  dateend: ModelStringFilterInput
+  url: ModelStringFilterInput
+  and: [ModelWorksFilterInput]
+  or: [ModelWorksFilterInput]
+  not: ModelWorksFilterInput
+}
+
+type Query {
+  getWorks(id: ID!): Works
+  listWorkss(filter: ModelWorksFilterInput, limit: Int, nextToken: String): ModelWorksConnection
+}
+
+input CreateWorksInput {
+  id: ID
+  name: String!
+  description: String
+  image: String
+  datestart: String
+  dateend: String
+  url: String
+}
+
+input UpdateWorksInput {
+  id: ID!
+  name: String
+  description: String
+  image: String
+  datestart: String
+  dateend: String
+  url: String
+}
+
+input DeleteWorksInput {
+  id: ID
+}
+
+type Mutation {
+  createWorks(input: CreateWorksInput!): Works
+  updateWorks(input: UpdateWorksInput!): Works
+  deleteWorks(input: DeleteWorksInput!): Works
+}
+
+type Subscription {
+  onCreateWorks: Works @aws_subscribe(mutations: ["createWorks"])
+  onUpdateWorks: Works @aws_subscribe(mutations: ["updateWorks"])
+  onDeleteWorks: Works @aws_subscribe(mutations: ["deleteWorks"])
+}
